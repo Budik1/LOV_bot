@@ -1,5 +1,8 @@
 import pyautogui
 from time import sleep
+import baza_dannyx as b_d
+
+
 
 
 def move_to_click(pos_click: tuple, z_p_k: float):
@@ -128,11 +131,11 @@ def go_in_haus():
     y += 220
     haus = x, y
     move_to_click(haus, 0)
-    to_fountain = pyautogui.locateCenterOnScreen('img/to_fountain.png', confidence=0.85)
+    to_fountain = pyautogui.locateCenterOnScreen('img/to_fountain_from_houses.png', confidence=0.85)
     it = 0
     while to_fountain and it <= 10:
         it += 1
-        to_fountain = pyautogui.locateCenterOnScreen('img/to_fountain.png', confidence=0.85)
+        to_fountain = pyautogui.locateCenterOnScreen('img/to_fountain_from_houses.png', confidence=0.85)
     if to_fountain:
         return 0
     else:
@@ -157,11 +160,11 @@ def next_haus():
 
 def exit_to_fountain():
     # print('fun.exit_to_fountain')
-    to_fountain = pyautogui.locateCenterOnScreen('img/to_fountain.png', confidence=0.9)
+    to_fountain = pyautogui.locateCenterOnScreen('img/to_fountain_from_houses.png', confidence=0.9)
     while not to_fountain:
         sleep(1)
         print(to_fountain, 'to_fountain')
-        to_fountain = pyautogui.locateCenterOnScreen('img/to_fountain.png', confidence=0.85)
+        to_fountain = pyautogui.locateCenterOnScreen('img/to_fountain_from_houses.png', confidence=0.85)
 
     move_to_click(to_fountain, 0.5)
 
@@ -198,3 +201,32 @@ def cancel_or_knob():
         move_to_click(knob, 0)
     close = wait_close('cancel_or_knob')
     return close
+
+
+def selection_hero():
+    gavril = pyautogui.locateCenterOnScreen('img/gavril.png', confidence=0.9)
+    gadya = pyautogui.locateCenterOnScreen('img/gadya.png', confidence=0.9)
+    if gavril:
+        print('Гаврил')
+        tasks = b_d.tasks_g
+    elif gadya:
+        print('Гадя')
+        tasks = b_d.tasks_v
+    else:
+        print('не опознан')
+        tasks = None
+
+    return tasks
+
+
+def to_fountain():
+    fountain1 = pyautogui.locateCenterOnScreen('img/to_fountain_from_houses.png', confidence=0.9)
+    fountain2 = pyautogui.locateCenterOnScreen('img/to_fountain_from_pier.png', confidence=0.9)
+    if fountain1:
+        print('от домов к фонтану')
+        move_to_click(fountain1, 0)
+    if fountain2:
+        print('от пристани к фонтану')
+        move_to_click(fountain2, 0)
+    else:
+        print('у фонтана')

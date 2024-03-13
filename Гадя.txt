@@ -1,6 +1,7 @@
-img/tasks/90x30.png, conf=0.964
-img/tasks/270x90.png, conf=0.99
-
+img/tasks_v/90x30_1.png, conf=0.99
+img/tasks_v/135x45_1.png, conf=0.99
+img/tasks_v/270x90_1.png, conf=0.99
+225x75_1
 
 
 

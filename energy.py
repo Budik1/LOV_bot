@@ -1,38 +1,12 @@
 import pyautogui
 from time import sleep
-from fun import see_tasks, move_to_click, cancel_or_knob, wait_close, push_close, find_link_i
+from fun import see_tasks, move_to_click, cancel_or_knob, wait_close, find_link_i, selection_hero
 
 par_conf = 0.9
 conf = 0.99  # 0.962
-tasks_v = {'t1': 'img/tasks/45x15.png', 't1-1': 'img/tasks/45x15_1.png',
-           't2': 'img/tasks/90x30.png',
-           't3': 'img/tasks/135x45.png',
-           't4': 'img/tasks/180x60.png',
-           't5': 'img/tasks/225x75.png',
-           't6': 'img/tasks/270x90.png',
-           }
-tasks_g = {'t1_1': 'img/tasks_g/32x11_2.png', 't1_2': 'img/tasks_g/32x11_2.png',
-           't2_1': 'img/tasks_g/63x21_1.png','t2_3': 'img/tasks_g/63x21_3.png',
-           't3_2': 'img/tasks_g/95x32_2.png', 't3_3': 'img/tasks_g/95x32_3.png',
-           't4_1': 'img/tasks_g/126x42_1.png', 't4_3': 'img/tasks_g/126x42_3.png',
-           't5_2': 'img/tasks_g/158x53_2.png', 't5_3': 'img/tasks_g/158x53_3.png',
-           }
 
 
-def selection_hero():
-    gavril = pyautogui.locateCenterOnScreen('img/gavril.png', confidence=0.9)
-    gadya = pyautogui.locateCenterOnScreen('img/gadya.png', confidence=0.9)
-    if gavril:
-        print('Гаврил')
-        tasks = tasks_g
-    elif gadya:
-        print('Гадя')
-        tasks = tasks_v
-    else:
-        print('не опознан')
-        tasks = None
 
-    return tasks
 
 
 def verify_energy(q_it):
@@ -65,9 +39,6 @@ def task_selection(tasks):
         print(f"поиск вариантов, conf ={conf}")
 
 
-
-
-
 close = wait_close('проверка перса')
 if close:
     move_to_click(close, 0)
@@ -77,7 +48,8 @@ energy_ = 1
 while energy_:
     see_tasks()
     variant = task_selection(tasks_)
-    move_to_click(variant, 0.5)
+    pyautogui.moveTo(variant)  # отладка
+    # move_to_click(variant, 0.5)  # рабочая
     no_energy = verify_energy(4)
     if no_energy:
         print('NO ENERGY !!!')
@@ -143,4 +115,4 @@ while energy_:
                 #     move_to_click(close, 0)
                 cansel_knob = cancel_or_knob()
                 print()
-
+                energy_ = 0
