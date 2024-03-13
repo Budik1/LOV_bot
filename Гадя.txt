@@ -1,0 +1,6 @@
+img/tasks/90x30.png, conf=0.964
+img/tasks/270x90.png, conf=0.99
+
+
+
+

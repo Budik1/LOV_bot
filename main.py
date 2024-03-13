@@ -3,18 +3,17 @@ from tkinter import ttk
 from PIL import ImageTk
 import fun
 
+def start():
+    pass
 
 root = Tk()
 
-root.title(' помощник "Метро 2033"')
+root.title('помощник "L_O_V"')
 root.geometry("327x380+1240+50")  # Ширина x Высота + координата X + координата Y
 root.resizable(False, False)
 
-# status_kiki = IntVar(value=0)
-# status_krysa = StringVar(value='0')
-# status_vip = StringVar(value='0')
-#
-# ttk.Button(text=" Start ", width=13, command=fun.start_p_m).place(x=0, y=0)
+
+ttk.Button(text=" Start ", width=13, command=start).place(x=0, y=0)
 # ttk.Button(text=" сбор бонуса ", width=13, command=fun.bonus, state="disabled").place(x=0, y=32)
 # ttk.Label(text=status_bonus).place(x=130, y=32)
 # ttk.Button(text="  сбор подарков  ", width=13, command=fun.station_gifts, state="disabled").place(x=0, y=64)
@@ -38,12 +37,7 @@ root.resizable(False, False)
 # ttk.Button(text="frunze_riga", width=11, command=touring.frunze_riga).place(x=0, y=277)
 # ttk.Button(text="riga_frunze", width=11, command=touring.riga_frunze).place(x=0, y=308)
 #
-# ttk.Button(text="задания на Киевской", width=17, command=touring.tasks_na_kievskoy).place(x=120, y=138)
-# # тест пробежка
-# ttk.Button(text="тест пробежка", width=13, command=dvizh_test).place(x=153, y=64)
-# ttk.Label(textvariable=status_krysa, background="#FFCDD2", foreground="#0000FF", padding=4).place(x=285, y=64)
-# ttk.Button(text="обход всех станций", width=16, command=touring.sbor_podarkov).place(x=153, y=96)
-#
+
 # imagePul = ImageTk.PhotoImage(file="img/pulya.png")
 # ttk.Button(root, image=imagePul, command=station_master.vybor_zadaniya_na_puli).place(x=60, y=145)
 #
