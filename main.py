@@ -1,8 +1,9 @@
 from tkinter import *
 from tkinter import ttk
-from PIL import ImageTk
-import fun
-
+# from PIL import ImageTk
+# import fun
+import revision_of_house as r_h
+import energy
 def start():
     pass
 
@@ -13,7 +14,9 @@ root.geometry("327x380+1240+50")  # Ширина x Высота + координ
 root.resizable(False, False)
 
 
-ttk.Button(text=" Start ", width=13, command=start).place(x=0, y=0)
+ttk.Button(text="сбор сундуков", width=13, command=r_h.revision_of_house).place(x=0, y=0)
+ttk.Button(text="трата энергии", width=13, command=energy.energy).place(x=0, y=30)
+
 # ttk.Button(text=" сбор бонуса ", width=13, command=fun.bonus, state="disabled").place(x=0, y=32)
 # ttk.Label(text=status_bonus).place(x=130, y=32)
 # ttk.Button(text="  сбор подарков  ", width=13, command=fun.station_gifts, state="disabled").place(x=0, y=64)

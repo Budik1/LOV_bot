@@ -1,7 +1,10 @@
-img/tasks_v/90x30_1.png, conf=0.99
-img/tasks_v/135x45_1.png, conf=0.99
-img/tasks_v/270x90_1.png, conf=0.99
-225x75_1
-
+12  img/tasks_v/45x15_1.png, conf=0.989
+1 3 img/tasks_v/45x15.png, conf=0.99
+123 img/tasks_v/90x30_1.png, conf=0.989
+123 img/tasks_v/135x45_1.png, conf=0.988
+123 img/tasks_v/180x60.png, conf=0.99
+12  img/tasks_v/225x75_1.png, conf=0.989
+  3 img/tasks_v/225x75_3.png, conf=0.99
+1 3 img/tasks_v/270x90_3.png, conf=0.99
 
 

@@ -170,7 +170,7 @@ def exit_to_fountain():
 
 
 def wait_close(txt):
-    print('fun.wait_close', txt)
+    # print('fun.wait_close', txt)
     it = 0
     close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
     while not close and it < 3:
@@ -178,6 +178,8 @@ def wait_close(txt):
         it += 1
         close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
     # print('ждем close', it)
+    sleep(0.2)
+    close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
     return close
 
 

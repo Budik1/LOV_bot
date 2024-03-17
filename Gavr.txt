@@ -1,5 +1,11 @@
+123 img/tasks_g/32x11_2.png, conf=0.989
 
-63x21_3.png
-95x32_2.png
+12  img/tasks_g/63x21_1.png, conf=0.99
+  3 img/tasks_g/63x21_3.png, conf=0.99
 
-158x53_2.png
+12  img/tasks_g/95x32_2.png, conf=0.99
+  3 img/tasks_g/95x32_3.png, conf=0.99
+
+123 img/tasks_g/126x42_1.png, conf=0.99
+
+123 img/tasks_g/158x53_2.png, conf=0.99
