@@ -4,8 +4,18 @@ from tkinter import ttk
 # import fun
 import revision_of_house as r_h
 import energy
-def start():
-    pass
+import arena
+
+
+
+def arena_battl():
+    quantity_battles = 0
+    while True:
+        arena.battle_in_arena()
+        quantity_battles += 1
+        print('Бой №', quantity_battles,)
+
+
 
 root = Tk()
 
@@ -16,6 +26,7 @@ root.resizable(False, False)
 
 ttk.Button(text="сбор сундуков", width=13, command=r_h.revision_of_house).place(x=0, y=0)
 ttk.Button(text="трата энергии", width=13, command=energy.energy).place(x=0, y=30)
+ttk.Button(text="арена", width=13, command=arena_battl).place(x=0, y=60)
 
 # ttk.Button(text=" сбор бонуса ", width=13, command=fun.bonus, state="disabled").place(x=0, y=32)
 # ttk.Label(text=status_bonus).place(x=130, y=32)

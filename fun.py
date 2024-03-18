@@ -40,7 +40,7 @@ def find_link_i():
 
 def see_tasks():
     """Открыть таверну"""
-    taverna = pyautogui.locateCenterOnScreen('img/taverna.png', confidence=0.9)
+    taverna = pyautogui.locateCenterOnScreen('img/linck_taverna.png', confidence=0.9)
     if taverna:
         pyautogui.moveTo(taverna, duration=1)
         return taverna
@@ -51,10 +51,10 @@ def see_tasks():
         y += 140
         pos = x, y
         move_to_click(pos, 0.2)
-        taverna = pyautogui.locateCenterOnScreen('img/taverna.png', confidence=0.9)
+        taverna = pyautogui.locateCenterOnScreen('img/linck_taverna.png', confidence=0.9)
         while not taverna:
             sleep(0.1)
-            taverna = pyautogui.locateCenterOnScreen('img/taverna.png', confidence=0.9)
+            taverna = pyautogui.locateCenterOnScreen('img/linck_taverna.png', confidence=0.9)
         pyautogui.moveTo(taverna, duration=1)
         return taverna
 
@@ -232,3 +232,16 @@ def to_fountain():
         move_to_click(fountain2, 0)
     else:
         print('у фонтана')
+
+
+def in_battle(par_conf, pos_i):
+    skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
+    if skip_battle:
+        x, y = pos_i
+        y += 450
+        pos_pet = x, y
+        pyautogui.click(pos_pet)
+        print(skip_battle,'пропустить бой')
+        move_to_click(skip_battle, 0.2)
+
+        return 1

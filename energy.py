@@ -1,6 +1,6 @@
 import pyautogui
 from time import sleep
-from fun import see_tasks, move_to_click, cancel_or_knob, wait_close, find_link_i, selection_hero, foto
+from fun import see_tasks, move_to_click, cancel_or_knob, wait_close, find_link_i, selection_hero, foto, in_battle
 
 par_conf = 0.9
 conf = 0.99  # 0.962
@@ -51,8 +51,8 @@ def energy():
     while energy_:
         see_tasks()
         variant = task_selection(tasks_)
-        pyautogui.moveTo(variant)  # отладка
-        # move_to_click(variant, 0.5)  # рабочая
+        # pyautogui.moveTo(variant)  # отладка
+        move_to_click(variant, 0.5)  # автомат
         no_energy = verify_energy(4)
         if no_energy:
             print('NO ENERGY !!!')
@@ -61,21 +61,13 @@ def energy():
         else:
             pos_i = find_link_i()
             print('Есть энергия')
-            taverna = pyautogui.locateCenterOnScreen('img/taverna.png', confidence=0.9)
+            taverna = pyautogui.locateCenterOnScreen('img/linck_taverna.png', confidence=0.9)
             while taverna:
                 sleep(1)
-                taverna = pyautogui.locateCenterOnScreen('img/taverna.png', confidence=0.9)
+                taverna = pyautogui.locateCenterOnScreen('img/linck_taverna.png', confidence=0.9)
 
             skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
             while not skip_battle:
-                if it_f == 1:
-                    sleep(1.5)
-                    it_f += 1
-                    x_r, y_r = pos_i
-                    x_r += 380
-                    y_r += 403
-                    # print('create foto')
-                    foto('img/tests/test_foto.png', _region=(x_r, y_r, 200, 30))
                 awake_friend = pyautogui.locateCenterOnScreen('img/_awake_friend.png', confidence=par_conf)
                 popup_xp = pyautogui.locateCenterOnScreen('img/_popup_xp.png', confidence=par_conf)
                 invite_friends = pyautogui.locateCenterOnScreen('img/_invite_friends.png', confidence=par_conf)
@@ -113,13 +105,8 @@ def energy():
                     if close:
                         move_to_click(close, 0)
                 skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
-                if skip_battle:
-                    # pyautogui.moveTo(pos_i)
-                    x, y = pos_i
-                    y += 450
-                    pos_pet = x, y
-                    pyautogui.click(pos_pet)
-                    move_to_click(skip_battle, 0.2)
+                end = in_battle(par_conf, pos_i)
+                if end:
                     close = wait_close('skip_battle')
                     if close:
                         move_to_click(close, 0)
@@ -130,4 +117,4 @@ def energy():
                         if close:
                             move_to_click(close, 0)
                     print()
-                    energy_ = 0
+                    # energy_ = 0
