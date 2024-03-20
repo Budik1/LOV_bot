@@ -28,7 +28,7 @@ def task_selection(tasks):
             task_ = pyautogui.locateCenterOnScreen(tasks[img], confidence=conf)
             if task_:
                 print(f"{tasks[img]}, conf={conf}")
-                print('проверь наличие и место')
+                # print('проверь наличие и место')
                 x, y = task_
                 y -= 40
                 click_task = x, y
@@ -47,8 +47,8 @@ def energy():
     tasks_ = selection_hero()
 
     energy_ = 1
-    it_f =1
     while energy_:
+        review = 0
         see_tasks()
         variant = task_selection(tasks_)
         # pyautogui.moveTo(variant)  # отладка
@@ -60,7 +60,7 @@ def energy():
             move_to_click(wait_close('NO ENERGY !!!'), 0.3)
         else:
             pos_i = find_link_i()
-            print('Есть энергия')
+            # print('Есть энергия')
             taverna = pyautogui.locateCenterOnScreen('img/linck_taverna.png', confidence=0.9)
             while taverna:
                 sleep(1)
@@ -73,41 +73,48 @@ def energy():
                 invite_friends = pyautogui.locateCenterOnScreen('img/_invite_friends.png', confidence=par_conf)
                 treasure = pyautogui.locateCenterOnScreen('img/_treasure.png', confidence=par_conf)
                 yes_go = pyautogui.locateCenterOnScreen('img/_yes_go.png', confidence=par_conf)
-                if popup_xp:
-                    print('я учту это')
-                    move_to_click(popup_xp, 0.1)
-                    move_to_click(wait_close('я учту это'), 0)
-                if invite_friends:
-                    print('Пригласить друга')
-                    move_to_click(invite_friends, 0.1)
-                    move_to_click(cancel_or_knob(), 0)
-                    # cancel_or_knob()
-                    # push_close()
-                    close = wait_close('Пригласить друга')
-                    if close:
-                        move_to_click(close, 0)
-                if treasure:
-                    print('Искать клад')
-                    move_to_click(treasure, 0.1)
-                    move_to_click(cancel_or_knob(), 0)
-                    # cancel_or_knob()
-                    # push_close()
-                if yes_go:
-                    print('Да, поехали')
-                    move_to_click(yes_go, 0.1)
-                if awake_friend:
-                    print('Разбудить друга')
-                    move_to_click(awake_friend, 0.1)
-                    # cancel_or_knob()
-                    # push_close()
-                    move_to_click(cancel_or_knob(), 0)
-                    close = wait_close('Разбудить друга')
-                    if close:
-                        move_to_click(close, 0)
+                if review == 0:
+                    if popup_xp:
+                        review = 1
+                        print('я учту это')
+                        move_to_click(popup_xp, 0.1)
+                        move_to_click(wait_close('я учту это'), 0)
+                    if invite_friends:
+                        review = 1
+                        print('Пригласить друга')
+                        move_to_click(invite_friends, 0.1)
+                        move_to_click(cancel_or_knob(), 0)
+                        # cancel_or_knob()
+                        # push_close()
+                        close = wait_close('Пригласить друга')
+                        if close:
+                            move_to_click(close, 0)
+                    if treasure:
+                        review = 1
+                        print('Искать клад')
+                        move_to_click(treasure, 0.1)
+                        move_to_click(cancel_or_knob(), 0)
+                        # cancel_or_knob()
+                        # push_close()
+                    if yes_go:
+                        review = 1
+                        print('Да, поехали')
+                        move_to_click(yes_go, 0.1)
+                    if awake_friend:
+                        review = 1
+                        print('Разбудить друга')
+                        move_to_click(awake_friend, 0.1)
+                        # cancel_or_knob()
+                        # push_close()
+                        move_to_click(cancel_or_knob(), 0)
+                        close = wait_close('Разбудить друга')
+                        if close:
+                            move_to_click(close, 0)
                 skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
                 end = in_battle(par_conf, pos_i)
                 if end:
                     close = wait_close('skip_battle')
+                    print("wait_close('skip_battle')")
                     if close:
                         move_to_click(close, 0)
                     sleep(2)
@@ -116,5 +123,6 @@ def energy():
                         close = wait_close('skip_battle')
                         if close:
                             move_to_click(close, 0)
-                    print()
-                    # energy_ = 0
+        print()
+        print('следующее задание')
+        # energy_ = 0

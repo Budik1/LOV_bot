@@ -20,7 +20,7 @@ def arena_battl():
 root = Tk()
 
 root.title('помощник "L_O_V"')
-root.geometry("327x380+1240+50")  # Ширина x Высота + координата X + координата Y
+root.geometry("327x130+1240+50")  # Ширина x Высота + координата X + координата Y
 root.resizable(False, False)
 
 
