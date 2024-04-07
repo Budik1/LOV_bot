@@ -1,5 +1,7 @@
 import pyautogui
 from time import sleep
+from fun import foto
 
-path_haus = pyautogui.locateCenterOnScreen('img/path_haus.png', confidence=0.9)
-print(path_haus)
+# hero_arena_ver = pyautogui.locateCenterOnScreen('img/hero_arena_ver.png')
+# print(hero_arena_ver)
+

@@ -7,14 +7,12 @@ import energy
 import arena
 
 
-
 def arena_battl():
-    quantity_battles = 0
+    attempts = 0
     while True:
         arena.battle_in_arena()
-        quantity_battles += 1
-        print('Бой №', quantity_battles,)
-
+        attempts += 1
+        print(f'попытка {attempts}, Бой {arena.quantity_battles}')
 
 
 root = Tk()
@@ -23,11 +21,16 @@ root.title('помощник "L_O_V"')
 root.geometry("327x130+1240+50")  # Ширина x Высота + координата X + координата Y
 root.resizable(False, False)
 
+gadya_case = StringVar(value='0')
+gavr_case = StringVar(value='0')
 
 ttk.Button(text="сбор сундуков", width=13, command=r_h.revision_of_house).place(x=0, y=0)
 ttk.Button(text="трата энергии", width=13, command=energy.energy).place(x=0, y=30)
 ttk.Button(text="арена", width=13, command=arena_battl).place(x=0, y=60)
-
+ttk.Label(text="V/").place(x=140, y=0)
+ttk.Label(textvariable=gadya_case).place(x=160, y=0)
+ttk.Label(text="G/").place(x=190, y=0)
+ttk.Label(textvariable=gavr_case).place(x=210, y=0)
 # ttk.Button(text=" сбор бонуса ", width=13, command=fun.bonus, state="disabled").place(x=0, y=32)
 # ttk.Label(text=status_bonus).place(x=130, y=32)
 # ttk.Button(text="  сбор подарков  ", width=13, command=fun.station_gifts, state="disabled").place(x=0, y=64)

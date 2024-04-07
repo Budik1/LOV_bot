@@ -27,6 +27,12 @@ def go_in_haus():
     sleep(0.5)
     path_haus = pyautogui.locateCenterOnScreen('img/path_haus.png', confidence=0.9)
     print(path_haus, 'path_haus до')
+    it = 0
+    while not path_haus and it < 3:
+        print('поиск дорожки к дому')
+        sleep(0.2)
+        it += 0.5
+        path_haus = pyautogui.locateCenterOnScreen('img/path_haus.png', confidence=0.9)
     if path_haus:
         print(path_haus, 'path_haus')
         while path_haus:
@@ -93,7 +99,7 @@ def revision_of_house():
     sleep(1)
     ik_haus = to_house()
     move_to_click(ik_haus, 0.3)  # переход на экран домов
-    while sum_vi < 15 and find_su < 10:
+    while  find_su < 10: # sum_vi < 15 and
         vizit = go_in_haus()
         if vizit:
             sum_vi += 1

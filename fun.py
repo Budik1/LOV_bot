@@ -12,7 +12,7 @@ def move_to_click(pos_click: tuple, z_p_k: float):
     """
     # print('move_to_click', pos_click)
     sleep(0.3)
-    pyautogui.moveTo(pos_click, duration=1, tween=pyautogui.easeInOutQuad)
+    pyautogui.moveTo(pos_click, duration=0.5, tween=pyautogui.easeInOutQuad)
     # print('должен быть клик')
     sleep(z_p_k)
     pyautogui.click(pos_click)
@@ -22,6 +22,9 @@ def move_to_click(pos_click: tuple, z_p_k: float):
 def push_close():
     # print('def "fun.push_close"')
     close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
+    while not close:
+        sleep(0.1)
+        close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
     if close:
         move_to_click(close, 0.1)
 
@@ -38,7 +41,7 @@ def find_link_i():
 
 def see_tasks():
     """Открыть таверну"""
-    taverna = pyautogui.locateCenterOnScreen('img/linck_taverna.png', confidence=0.9)
+    taverna = pyautogui.locateCenterOnScreen('img/link_taverna.png', confidence=0.9)
     if taverna:
         pyautogui.moveTo(taverna, duration=1)
         return taverna
@@ -49,10 +52,10 @@ def see_tasks():
         y += 140
         pos = x, y
         move_to_click(pos, 0.2)
-        taverna = pyautogui.locateCenterOnScreen('img/linck_taverna.png', confidence=0.9)
+        taverna = pyautogui.locateCenterOnScreen('img/link_taverna.png', confidence=0.9)
         while not taverna:
             sleep(0.1)
-            taverna = pyautogui.locateCenterOnScreen('img/linck_taverna.png', confidence=0.9)
+            taverna = pyautogui.locateCenterOnScreen('img/link_taverna.png', confidence=0.9)
         pyautogui.moveTo(taverna, duration=1)
         return taverna
 
@@ -174,3 +177,11 @@ def in_battle(par_conf, pos_i):
         move_to_click(skip_battle, 0.2)
 
         return 1
+
+def scroll_down():
+    scroll_down_ = pyautogui.locateCenterOnScreen('img/scroll_down.png', confidence=0.98)
+    while not scroll_down_:
+        sleep(0.5)
+        scroll_down_ = pyautogui.locateCenterOnScreen('img/scroll_down.png', confidence=0.98)
+    sleep(0.1)
+    return scroll_down_

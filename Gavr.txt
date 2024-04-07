@@ -1,11 +1,5 @@
-123 img/tasks_g/32x11_2.png, conf=0.989
-
-12  img/tasks_g/63x21_1.png, conf=0.99
-  3 img/tasks_g/63x21_3.png, conf=0.99
-
-12  img/tasks_g/95x32_2.png, conf=0.99
-  3 img/tasks_g/95x32_3.png, conf=0.99
-
-123 img/tasks_g/126x42_1.png, conf=0.99
-
-123 img/tasks_g/158x53_2.png, conf=0.99
+123 img/tasks_g/33x11.png, conf=0.99, conf=0.989, conf=0.958
+123 img/tasks_g/66x22-2.png, conf=0.989 conf=0.99, conf=0.988
+123 img/tasks_g/99x33.png, conf=0.959, conf=0.988, conf=0.99
+123 img/tasks_g/132x44-3.png, conf=0.96, conf=0.989, conf=0.99
+123 img/tasks_g/165x55-1.png,conf=0.99, conf=0.989, conf=0.959

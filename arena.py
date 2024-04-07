@@ -1,23 +1,45 @@
 import pyautogui
-from time import sleep
-from fun import move_to_click, foto, push_close, find_link_i, in_battle
+from time import sleep, time
+from fun import move_to_click, foto, push_close, find_link_i, in_battle, scroll_down
 
+quantity_battles = 0
 par_conf = 0.9
 
-def battle_in_arena():
+def go_in_hall_glory():
+    print('def go_in_hall_glory')
+    in_hall_glory = pyautogui.locateCenterOnScreen('img/link_in_hall_glory.png', confidence=0.98)
     hall_glory = pyautogui.locateCenterOnScreen('img/hall_glory.png', confidence=0.9999)
-    # print(hall_glory, 'hall_glory')
-    if not hall_glory:
-        push_close()
-        sleep(1)
-    hall_glory = pyautogui.locateCenterOnScreen('img/hall_glory.png', confidence=0.9999)
-    move_to_click(hall_glory, 0.2)
-    in_hall_glory = pyautogui.locateCenterOnScreen('img/linck_in_hall_glory.png', confidence=0.98)
+    close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
     while not in_hall_glory:
-        sleep(1)
-        in_hall_glory = pyautogui.locateCenterOnScreen('img/linck_in_hall_glory.png', confidence=0.98)
+        if close:
+            push_close()
+            sleep(1)
+        elif hall_glory:
+            move_to_click(hall_glory, 0.2)
+            sleep(1)
+        in_hall_glory = pyautogui.locateCenterOnScreen('img/link_in_hall_glory.png', confidence=0.98)
+        hall_glory = pyautogui.locateCenterOnScreen('img/hall_glory.png', confidence=0.9999)
+        close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
+
+
+
+
+def battle_in_arena():
+    global quantity_battles
+    go_in_hall_glory()
+    # hall_glory = pyautogui.locateCenterOnScreen('img/hall_glory.png', confidence=0.9999)
+    # # print(hall_glory, 'hall_glory')
+    # if not hall_glory:
+    #     push_close()
+    #     sleep(1)
+    # hall_glory = pyautogui.locateCenterOnScreen('img/hall_glory.png', confidence=0.9999)
+    # move_to_click(hall_glory, 0.2)
+    # in_hall_glory = pyautogui.locateCenterOnScreen('img/link_in_hall_glory.png', confidence=0.98)
+    # while not in_hall_glory:
+    #     sleep(1)
+    #     in_hall_glory = pyautogui.locateCenterOnScreen('img/link_in_hall_glory.png', confidence=0.98)
     sleep(0.5)
-    in_hall_glory = pyautogui.locateCenterOnScreen('img/linck_in_hall_glory.png', confidence=0.98)
+    in_hall_glory = pyautogui.locateCenterOnScreen('img/link_in_hall_glory.png', confidence=0.98)
     x, y = in_hall_glory
     x -= 300
     y += 100
@@ -40,35 +62,72 @@ def battle_in_arena():
     # pyautogui.moveTo(hero_arena, duration=2)
     attack = pyautogui.locateCenterOnScreen('img/attack.png', confidence=0.95, region=region_search)
     move_to_click(attack, 0.2)
-    linck_arena = pyautogui.locateCenterOnScreen('img/linck_arena.png')
+    linck_arena = pyautogui.locateCenterOnScreen('img/link_arena.png')
     while not linck_arena:
         sleep(1)
-        linck_arena = pyautogui.locateCenterOnScreen('img/linck_arena.png')
+        linck_arena = pyautogui.locateCenterOnScreen('img/link_arena.png')
     hero_arena_ver = pyautogui.locateCenterOnScreen('img/hero_arena_ver.png')
     if hero_arena_ver:
         print('безоружен')
-
-    pos_i = find_link_i()
-    in_battl = pyautogui.locateCenterOnScreen('img/in_battle.png')
-    while not in_battl:
-        sleep(1)
+        quantity_battles += 1
+        pos_i = find_link_i()
         in_battl = pyautogui.locateCenterOnScreen('img/in_battle.png')
-    move_to_click(in_battl, 0.2)
-    # print(pos_i)
-    skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
-    while not skip_battle:
-        sleep(1)
+        while not in_battl:
+            sleep(1)
+            in_battl = pyautogui.locateCenterOnScreen('img/in_battle.png')
+        move_to_click(in_battl, 0.2)
+        # print(pos_i)
         skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
-    # print("есть пропустить бой")
-    in_battle(par_conf, pos_i)
-    close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
-    while not close:
+        while not skip_battle:
+            sleep(1)
+            skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
+        # print("есть пропустить бой")
+        in_battle(par_conf, pos_i)
+        close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
+        while not close:
+            sleep(0.2)
+            close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
         sleep(0.2)
         close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
-    sleep(0.2)
-    close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
-    move_to_click(close, 0.1)
-    sleep(1)
+        move_to_click(close, 0.1)
+        sleep(1)
+    else:
+        print('вооружён')
 
 
+def inspection_hero():
+    in_hall_glory = pyautogui.locateCenterOnScreen('img/link_in_hall_glory.png', confidence=0.98)
+    x, y = in_hall_glory
+    y += 170
+    link = x, y
 
+    return link
+
+
+def search_unarmed():
+    start_time = time()
+    go_in_hall_glory()
+
+    no_arms = pyautogui.locateCenterOnScreen('img/no_arm.png', confidence=0.98)
+    while not no_arms:
+        move_to_click(inspection_hero(), 0.05)
+
+        ver_her_arms = pyautogui.locateCenterOnScreen('img/ver_her_arms.png', confidence=0.98)
+        while not ver_her_arms:
+            # sleep(0.2)
+            ver_her_arms = pyautogui.locateCenterOnScreen('img/ver_her_arms.png', confidence=0.98)
+
+        no_arms = pyautogui.locateCenterOnScreen('img/no_arm.png', confidence=0.98)
+        if no_arms:
+            print('no_arms')
+        else:
+            push_close()
+            move_to_click(scroll_down(), 0.05)
+
+    finish_time = float(time() - start_time)  # общее количество секунд
+    minutes = int(finish_time // 60)  # количество минут
+    seconds = round((finish_time % minutes), 2)
+    print('Потрачено время', minutes, ' минут', seconds, ' сек.')
+
+
+# search_unarmed()
