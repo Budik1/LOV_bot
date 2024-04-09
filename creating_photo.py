@@ -1,5 +1,5 @@
 import pyautogui
-from fun import  foto, see_tasks
+from fun import foto, see_tasks, find_link_i
 
 
 def creating_photo_tasks():
@@ -18,7 +18,8 @@ def creating_photo_tasks():
     r_x_3, r_y_3 = x, y
     foto("img/full_t/line_3.png", _region=(r_x_3, r_y_3, width, height))
 
-def creating_photo_hero():
+
+def creating_photo_hero_in_hall_glory():
     in_hall_glory = pyautogui.locateCenterOnScreen('img/link_in_hall_glory.png', confidence=0.98)
     pyautogui.moveTo(in_hall_glory, duration=1)
     x, y = in_hall_glory
@@ -28,7 +29,8 @@ def creating_photo_hero():
     pyautogui.moveTo(pos, duration=1)
     foto('img/tests/test.png', (x, y, 140, 62))
 
-def creating_photo_hero_ver():
+
+def creating_photo_hero_ver_in_hall_glory():
     link_arena = pyautogui.locateCenterOnScreen('img/link_arena.png', confidence=0.98)
     pyautogui.moveTo(link_arena, duration=1)
     x, y = link_arena
@@ -38,5 +40,18 @@ def creating_photo_hero_ver():
     pyautogui.moveTo(pos, duration=1)
     foto('img/tests/test_ver.png', (x, y, 244, 493))
 
+
+def creating_photo_hero():
+    pos = find_link_i()
+    pyautogui.moveTo(pos, duration=1)
+    x, y = pos
+    y -= 90
+    x -= 30
+    pos = x, y
+    # pyautogui.moveTo(pos, duration=1)
+    foto('img/tests/test_her.png', (x, y, 58, 80))
+
+
+creating_photo_hero()
 
 # creating_photo_tasks()

@@ -82,14 +82,6 @@ def close_popup_window():
         move_to_click(cancel, 1)
 
 
-# def go_out_haus():
-#     out_haus = pyautogui.locateCenterOnScreen('img/go_out_haus.png', confidence=0.9)
-#     while not out_haus:
-#         sleep(0.1)
-#         out_haus = pyautogui.locateCenterOnScreen('img/go_out_haus.png', confidence=0.9)
-#     move_to_click(out_haus, 0)
-
-
 def exit_to_fountain():
     # print('fun.exit_to_fountain')
     to_fountain = pyautogui.locateCenterOnScreen('img/to_fountain_from_houses.png', confidence=0.9)
@@ -180,6 +172,7 @@ def in_battle(par_conf, pos_i):
 
         return 1
 
+
 def scroll_down():
     scroll_down_ = pyautogui.locateCenterOnScreen('img/scroll_down.png', confidence=0.98)
     while not scroll_down_:
@@ -187,3 +180,20 @@ def scroll_down():
         scroll_down_ = pyautogui.locateCenterOnScreen('img/scroll_down.png', confidence=0.98)
     sleep(0.1)
     return scroll_down_
+
+
+def go_in_hall_glory():
+    print('def go_in_hall_glory')
+    in_hall_glory = pyautogui.locateCenterOnScreen('img/link_in_hall_glory.png', confidence=0.98)
+    hall_glory = pyautogui.locateCenterOnScreen('img/hall_glory.png', confidence=0.9999)
+    close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
+    while not in_hall_glory:
+        if close:
+            push_close()
+            sleep(1)
+        elif hall_glory:
+            move_to_click(hall_glory, 0.2)
+            sleep(1)
+        in_hall_glory = pyautogui.locateCenterOnScreen('img/link_in_hall_glory.png', confidence=0.98)
+        hall_glory = pyautogui.locateCenterOnScreen('img/hall_glory.png', confidence=0.9999)
+        close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)

@@ -1,7 +1,9 @@
 import pyautogui
 from time import sleep
-from fun import foto
+from fun import foto, find_link_i
+from creating_photo import creating_photo_hero
 
-# hero_arena_ver = pyautogui.locateCenterOnScreen('img/hero_arena_ver.png')
-# print(hero_arena_ver)
+
+
+
 
