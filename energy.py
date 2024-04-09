@@ -2,6 +2,7 @@ import pyautogui
 from time import sleep
 from fun import see_tasks, move_to_click, cancel_or_knob, wait_close, find_link_i, selection_hero, foto, in_battle
 from creating_photo import creating_photo_tasks
+import baza_dannyx as b_d
 
 par_conf = 0.89
 conf = 0.99  # 0.962
@@ -46,7 +47,13 @@ def energy():
     close = wait_close('проверка перса')
     if close:
         move_to_click(close, 0)
-    tasks_ = selection_hero()
+    hero = selection_hero()
+    if hero == 'Gavr':
+        tasks_ = b_d.tasks_g
+    elif hero == 'Gadya':
+        tasks_ = b_d.tasks_v
+
+    # tasks_ = selection_hero()
 
     energy_ = 1
     while energy_:

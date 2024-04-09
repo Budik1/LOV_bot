@@ -1,6 +1,6 @@
 import pyautogui
 from time import sleep
-from fun import move_to_click, find_link_i, push_close, exit_to_fountain
+from fun import move_to_click, find_link_i, push_close, exit_to_fountain, selection_hero
 from PIL import ImageTk
 
 
@@ -88,6 +88,7 @@ def go_out_haus():
 
 
 def revision_of_house():
+    hero = selection_hero()
     sum_vi = 0
     find_su = 0
     link = find_link_i()
@@ -99,7 +100,7 @@ def revision_of_house():
     sleep(1)
     ik_haus = to_house()
     move_to_click(ik_haus, 0.3)  # переход на экран домов
-    while  find_su < 10: # sum_vi < 15 and
+    while find_su < 10:  # sum_vi < 15 and
         vizit = go_in_haus()
         if vizit:
             sum_vi += 1

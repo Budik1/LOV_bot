@@ -142,15 +142,17 @@ def selection_hero():
     gadya = pyautogui.locateCenterOnScreen('img/gadya.png', confidence=0.9)
     if gavril:
         print('Гаврил')
+        hero = 'Gavr'
         tasks = b_d.tasks_g
     elif gadya:
         print('Гадя')
+        hero = 'Gadya'
         tasks = b_d.tasks_v
     else:
         print('не опознан')
-        tasks = None
+        hero = None
 
-    return tasks
+    return hero
 
 
 def to_fountain():

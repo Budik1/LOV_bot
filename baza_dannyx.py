@@ -2,7 +2,7 @@ tasks_v = {'t1': 'img/tasks_v/45x15.png',
            't2_1': 'img/tasks_v/90x30_1.png',
            't3_1': 'img/tasks_v/135x45_1.png',
            't4': 'img/tasks_v/180x60.png',
-           't5_3': 'img/tasks_v/225x75_3.png',
+           't5_1': 'img/tasks_v/225x75_1.png', 't5_3': 'img/tasks_v/225x75_3.png',
            't6_1': 'img/tasks_v/270x90_3.png',
            }
            #'t1': 'img/tasks_v/45x15_1.png',

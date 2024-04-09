@@ -1,12 +1,7 @@
 import pyautogui
-from time import sleep
-from fun import wait_close, foto, to_fountain, move_to_click, selection_hero, see_tasks, push_close, scroll_down
+from fun import  foto, see_tasks
 
-# close = wait_close('проверка')
-# if close:
-#     move_to_click(close, 0)
-# to_fountain()
-# tasks_ = selection_hero()
+
 def creating_photo_tasks():
     pos = see_tasks()
     width = 155
