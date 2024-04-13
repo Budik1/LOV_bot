@@ -161,6 +161,7 @@ def to_fountain():
 
 
 def in_battle(par_conf, pos_i):
+    print('in_battle')
     skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
     if skip_battle:
         x, y = pos_i
@@ -196,4 +197,4 @@ def go_in_hall_glory():
             sleep(1)
         in_hall_glory = pyautogui.locateCenterOnScreen('img/link_in_hall_glory.png', confidence=0.98)
         hall_glory = pyautogui.locateCenterOnScreen('img/hall_glory.png', confidence=0.9999)
-        close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
+    close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)

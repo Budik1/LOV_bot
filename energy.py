@@ -75,9 +75,9 @@ def energy():
             while taverna:
                 sleep(1)
                 taverna = pyautogui.locateCenterOnScreen('img/link_taverna.png', confidence=0.9)
-
-            skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
-            while not skip_battle and not after_battle:
+            link_battle_end = pyautogui.locateCenterOnScreen('img/link_battle_end.png', confidence=0.9)
+            # skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
+            while not link_battle_end: # and not after_battle:
                 awake_friend = pyautogui.locateCenterOnScreen('img/_awake_friend.png', confidence=par_conf)
                 popup_xp = pyautogui.locateCenterOnScreen('img/_popup_xp.png', confidence=par_conf)
                 invite_friends = pyautogui.locateCenterOnScreen('img/_invite_friends.png', confidence=par_conf)
@@ -121,19 +121,23 @@ def energy():
                         if close:
                             move_to_click(close, 0)
                 skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
-                end = in_battle(par_conf, pos_i)
-                if end:
-                    after_battle = 1
-                    close = wait_close('skip_battle')
-                    print("wait_close('skip_battle')")
-                    if close:
-                        move_to_click(close, 0)
-                    sleep(1)
-                    cansel_knob = cancel_or_knob()
-                    if cansel_knob:
-                        close = wait_close('skip_battle')
-                        if close:
-                            move_to_click(close, 0)
+                if skip_battle:
+                    in_battle(par_conf, pos_i)
+                link_battle_end = pyautogui.locateCenterOnScreen('img/link_battle_end.png', confidence=0.9)
+
+            # end = in_battle(par_conf, pos_i)
+            # if end:
+                # after_battle = 1
+            close = wait_close('skip_battle')
+            print("wait_close('skip_battle')")
+            if close:
+                move_to_click(close, 0)
+            sleep(1)
+            cansel_knob = cancel_or_knob()
+            if cansel_knob:
+                close = wait_close('skip_battle')
+                if close:
+                    move_to_click(close, 0)
         print()
         print('следующее задание')
         # energy_ = 0

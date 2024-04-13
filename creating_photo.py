@@ -52,6 +52,6 @@ def creating_photo_hero():
     foto('img/tests/test_her.png', (x, y, 58, 80))
 
 
-creating_photo_hero()
+# creating_photo_hero()
 
 # creating_photo_tasks()
