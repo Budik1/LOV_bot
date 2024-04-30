@@ -37,9 +37,9 @@ def task_selection(tasks):
                 return click_task
         conf -= 0.001
         print(f"поиск вариантов, conf ={conf}")
-        if conf <= 0.904:
+        if conf <= 0.94:
             creating_photo_tasks()
-            print('граница')
+            print('задание не найдено, обнови данные')
             return
 
 
@@ -52,6 +52,10 @@ def energy():
         tasks_ = b_d.tasks_g
     elif hero == 'Gadya':
         tasks_ = b_d.tasks_v
+    elif hero == 'Veles':
+        tasks_ = b_d.tasks_vel
+    elif hero == 'Mara':
+        tasks_ = b_d.tasks_mar
 
     # tasks_ = selection_hero()
 
@@ -70,14 +74,12 @@ def energy():
             move_to_click(wait_close('NO ENERGY !!!'), 0.3)
         else:
             pos_i = find_link_i()
-            # print('Есть энергия')
             taverna = pyautogui.locateCenterOnScreen('img/link_taverna.png', confidence=0.9)
             while taverna:
                 sleep(1)
                 taverna = pyautogui.locateCenterOnScreen('img/link_taverna.png', confidence=0.9)
             link_battle_end = pyautogui.locateCenterOnScreen('img/link_battle_end.png', confidence=0.9)
-            # skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
-            while not link_battle_end: # and not after_battle:
+            while not link_battle_end:
                 awake_friend = pyautogui.locateCenterOnScreen('img/_awake_friend.png', confidence=par_conf)
                 popup_xp = pyautogui.locateCenterOnScreen('img/_popup_xp.png', confidence=par_conf)
                 invite_friends = pyautogui.locateCenterOnScreen('img/_invite_friends.png', confidence=par_conf)
@@ -94,8 +96,7 @@ def energy():
                         print('Пригласить друга')
                         move_to_click(invite_friends, 0.1)
                         move_to_click(cancel_or_knob(), 0)
-                        # cancel_or_knob()
-                        # push_close()
+
                         close = wait_close('Пригласить друга')
                         if close:
                             move_to_click(close, 0)
@@ -104,8 +105,7 @@ def energy():
                         print('Искать клад')
                         move_to_click(treasure, 0.1)
                         move_to_click(cancel_or_knob(), 0)
-                        # cancel_or_knob()
-                        # push_close()
+
                     if yes_go:
                         review = 1
                         print('Да, поехали')
@@ -114,8 +114,7 @@ def energy():
                         review = 1
                         print('Разбудить друга')
                         move_to_click(awake_friend, 0.1)
-                        # cancel_or_knob()
-                        # push_close()
+
                         move_to_click(cancel_or_knob(), 0)
                         close = wait_close('Разбудить друга')
                         if close:
@@ -125,9 +124,6 @@ def energy():
                     in_battle(par_conf, pos_i)
                 link_battle_end = pyautogui.locateCenterOnScreen('img/link_battle_end.png', confidence=0.9)
 
-            # end = in_battle(par_conf, pos_i)
-            # if end:
-                # after_battle = 1
             close = wait_close('skip_battle')
             print("wait_close('skip_battle')")
             if close:

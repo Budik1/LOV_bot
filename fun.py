@@ -130,8 +130,10 @@ def cancel_or_knob():
 
 
 def selection_hero():
-    gavril = pyautogui.locateCenterOnScreen('img/gavril.png', confidence=0.9)
-    gadya = pyautogui.locateCenterOnScreen('img/gadya.png', confidence=0.9)
+    gavril = pyautogui.locateCenterOnScreen('img/h_gavril.png', confidence=0.9)
+    gadya = pyautogui.locateCenterOnScreen('img/h_gadya.png', confidence=0.9)
+    veles = pyautogui.locateCenterOnScreen('img/h_veles.png', confidence=0.9)
+    mara = pyautogui.locateCenterOnScreen('img/h_mara.png', confidence=0.9)
     if gavril:
         print('Гаврил')
         hero = 'Gavr'
@@ -140,6 +142,14 @@ def selection_hero():
         print('Гадя')
         hero = 'Gadya'
         tasks = b_d.tasks_v
+    elif veles:
+        print('Велес')
+        hero = 'Veles'
+        tasks = b_d.tasks_vel
+    elif mara:
+        print('Марьяна')
+        hero = 'Mara'
+        tasks = b_d.tasks_mar
     else:
         print('не опознан')
         hero = None
