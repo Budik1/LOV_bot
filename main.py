@@ -18,14 +18,15 @@ def arena_battl():
 root = Tk()
 
 root.title('помощник "L_O_V"')
-root.geometry("327x130+1240+50")  # Ширина x Высота + координата X + координата Y
+root.geometry("388x130+1195+50")  # Ширина x Высота + координата X + координата Y
 root.resizable(False, False)
 
 gadya_case = StringVar(value='0')
 gavr_case = StringVar(value='0')
 
 ttk.Button(text="сбор сундуков", width=13, command=r_h.revision_of_house).place(x=0, y=0)
-ttk.Button(text="трата энергии", width=13, command=energy.energy).place(x=0, y=30)
+ttk.Button(text="энергия в золото", width=16, command=energy.energy_gold).place(x=0, y=30)
+ttk.Button(text="энергия в опыт", width=16, command=energy.energy_xp).place(x=170, y=30)
 ttk.Button(text="арена", width=13, command=arena_battl).place(x=0, y=60)
 ttk.Label(text="V/").place(x=140, y=0)
 ttk.Label(textvariable=gadya_case).place(x=160, y=0)

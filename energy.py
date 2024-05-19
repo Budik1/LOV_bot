@@ -5,7 +5,7 @@ from creating_photo import creating_photo_tasks
 import baza_dannyx as b_d
 
 par_conf = 0.89
-conf = 0.99  # 0.962
+# conf = 0.99  # 0.962
 
 
 def verify_energy(q_it):
@@ -37,25 +37,25 @@ def task_selection(tasks):
                 return click_task
         conf -= 0.001
         print(f"поиск вариантов, conf ={conf}")
-        if conf <= 0.94:
+        if conf <= 0.98:
             creating_photo_tasks()
             print('задание не найдено, обнови данные')
             return
 
 
-def energy():
+def energy_gold():
     close = wait_close('проверка перса')
     if close:
         move_to_click(close, 0)
     hero = selection_hero()
     if hero == 'Gavr':
-        tasks_ = b_d.tasks_g
+        tasks_ = b_d.tasks_gold_g
     elif hero == 'Gadya':
-        tasks_ = b_d.tasks_v
+        tasks_ = b_d.tasks_gold_v
     elif hero == 'Veles':
-        tasks_ = b_d.tasks_vel
+        tasks_ = b_d.tasks_gold_vel
     elif hero == 'Mara':
-        tasks_ = b_d.tasks_mar
+        tasks_ = b_d.tasks_gold_mar
 
     # tasks_ = selection_hero()
 
@@ -136,4 +136,107 @@ def energy():
                     move_to_click(close, 0)
         print()
         print('следующее задание')
-        # energy_ = 0
+        # energy_ = 0 # для выполнения одного цикла
+
+
+def energy_xp():
+    close = wait_close('проверка перса')
+    if close:
+        move_to_click(close, 0)
+    hero = selection_hero()
+    if hero == 'Gavr':
+        tasks_ = b_d.tasks_xp_g
+    elif hero == 'Gadya':
+        tasks_ = b_d.tasks_xp_v
+    elif hero == 'Veles':
+        tasks_ = b_d.tasks_xp_vel
+    elif hero == 'Mara':
+        tasks_ = b_d.tasks_xp_mar
+
+    energy_ = 1
+    while energy_:
+        review = 0
+        after_battle = 0
+        see_tasks()
+        variant = task_selection(tasks_)
+        # pyautogui.moveTo(variant)  # отладка
+        move_to_click(variant, 0.5)  # автомат
+        no_energy = verify_energy(4)
+        if no_energy:
+            print('NO ENERGY !!!')
+            energy_ = None
+            move_to_click(wait_close('NO ENERGY !!!'), 0.3)
+        else:
+            pos_i = find_link_i()
+            taverna = pyautogui.locateCenterOnScreen('img/link_taverna.png', confidence=0.9)
+            while taverna:
+                sleep(1)
+                taverna = pyautogui.locateCenterOnScreen('img/link_taverna.png', confidence=0.9)
+            link_battle_end = pyautogui.locateCenterOnScreen('img/link_battle_end.png', confidence=0.9)
+            while not link_battle_end:
+                awake_friend = pyautogui.locateCenterOnScreen('img/_awake_friend.png', confidence=par_conf)
+                popup_xp = pyautogui.locateCenterOnScreen('img/_popup_xp.png', confidence=par_conf)
+                invite_friends = pyautogui.locateCenterOnScreen('img/_invite_friends.png', confidence=par_conf)
+                treasure = pyautogui.locateCenterOnScreen('img/_treasure.png', confidence=par_conf)
+                yes_go = pyautogui.locateCenterOnScreen('img/_yes_go.png', confidence=par_conf)
+                if review == 0:
+                    if popup_xp:
+                        review = 1
+                        print('я учту это')
+                        sleep(2)
+                        popup_xp = pyautogui.locateCenterOnScreen('img/_popup_xp.png', confidence=par_conf)
+                        move_to_click(popup_xp, 0.1)
+                        move_to_click(wait_close('я учту это'), 0)
+                    if invite_friends:
+                        review = 1
+                        print('Пригласить друга')
+                        sleep(2)
+                        invite_friends = pyautogui.locateCenterOnScreen('img/_invite_friends.png', confidence=par_conf)
+                        move_to_click(invite_friends, 0.1)
+                        move_to_click(cancel_or_knob(), 0)
+                        close = wait_close('Пригласить друга')
+                        if close:
+                            move_to_click(close, 0)
+                    if treasure:
+                        review = 1
+                        print('Искать клад')
+                        sleep(2)
+                        treasure = pyautogui.locateCenterOnScreen('img/_treasure.png', confidence=par_conf)
+                        move_to_click(treasure, 0.1)
+                        move_to_click(cancel_or_knob(), 0)
+
+                    if yes_go:
+                        review = 1
+                        print('Да, поехали')
+                        sleep(2)
+                        yes_go = pyautogui.locateCenterOnScreen('img/_yes_go.png', confidence=par_conf)
+                        move_to_click(yes_go, 0.1)
+                    if awake_friend:
+                        review = 1
+                        print('Разбудить друга')
+                        sleep(2)
+                        awake_friend = pyautogui.locateCenterOnScreen('img/_awake_friend.png', confidence=par_conf)
+                        move_to_click(awake_friend, 0.1)
+                        move_to_click(cancel_or_knob(), 0)
+                        close = wait_close('Разбудить друга')
+                        if close:
+                            move_to_click(close, 0)
+                skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
+                if skip_battle:
+                    in_battle(par_conf, pos_i)
+                link_battle_end = pyautogui.locateCenterOnScreen('img/link_battle_end.png', confidence=0.9)
+
+            close = wait_close('skip_battle')
+            print("wait_close('skip_battle')")
+            if close:
+                move_to_click(close, 0)
+            sleep(1)
+            cansel_knob = cancel_or_knob()
+            if cansel_knob:
+                close = wait_close('skip_battle')
+                if close:
+                    move_to_click(close, 0)
+        print()
+        print('следующее задание')
+        # energy_ = 0 # для выполнения одного цикла
+

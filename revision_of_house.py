@@ -45,6 +45,7 @@ def go_in_haus():
             out_haus = pyautogui.locateCenterOnScreen('img/go_out_haus.png', confidence=0.9)
         return 1
     else:
+        pyautogui.move(50, 50)
         return 0
 
 

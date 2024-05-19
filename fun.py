@@ -77,8 +77,13 @@ def close_popup_window():
     knob = pyautogui.locateCenterOnScreen('img/knob.png', confidence=0.89)
     cancel = pyautogui.locateCenterOnScreen('img/cancel.png', confidence=0.89)
     if knob:
+        sleep(1)
+        knob = pyautogui.locateCenterOnScreen('img/knob.png', confidence=0.89)
         move_to_click(knob, 1)
     if cancel:
+        sleep(1)
+        cancel = pyautogui.locateCenterOnScreen('img/cancel.png', confidence=0.89)
+        print('нажал отменить')
         move_to_click(cancel, 1)
 
 
@@ -137,19 +142,19 @@ def selection_hero():
     if gavril:
         print('Гаврил')
         hero = 'Gavr'
-        tasks = b_d.tasks_g
+        tasks = b_d.tasks_gold_g
     elif gadya:
         print('Гадя')
         hero = 'Gadya'
-        tasks = b_d.tasks_v
+        tasks = b_d.tasks_gold_v
     elif veles:
         print('Велес')
         hero = 'Veles'
-        tasks = b_d.tasks_vel
+        tasks = b_d.tasks_gold_vel
     elif mara:
         print('Марьяна')
         hero = 'Mara'
-        tasks = b_d.tasks_mar
+        tasks = b_d.tasks_gold_mar
     else:
         print('не опознан')
         hero = None

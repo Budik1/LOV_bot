@@ -1,5 +1,0 @@
-123 img/tasks_g/33x11.png, conf=0.99, conf=0.989, conf=0.958
-123 img/tasks_g/66x22-2.png, conf=0.989 conf=0.99, conf=0.988
-123 img/tasks_g/99x33.png, conf=0.959, conf=0.988, conf=0.99
-123 img/tasks_g/132x44-3.png, conf=0.96, conf=0.989, conf=0.99
-123 img/tasks_g/165x55-1.png,conf=0.99, conf=0.989, conf=0.959
