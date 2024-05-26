@@ -198,6 +198,7 @@ def energy_xp():
                         if close:
                             move_to_click(close, 0)
                     if treasure:
+                        # монеты
                         review = 1
                         print('Искать клад')
                         sleep(2)

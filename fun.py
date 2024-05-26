@@ -1,6 +1,25 @@
 import pyautogui
 from time import sleep
+import datetime
 import baza_dannyx as b_d
+
+log = 1
+
+def my_print_to_file(text):
+    if log == 1:
+        date_time, date = time_now()
+        file_name = date + ".txt"
+        file = open(file_name, 'a+', encoding='utf-8')
+        print(date_time, text, file=file)
+        file.close()  # закрыть файл после работы с ним.
+
+
+def time_now():
+    now = datetime.datetime.now()
+    # '%Y-%m-%d_%H:%M:%S' '%Y-%m-%d %H°%M\'\'%S\''
+    date_time_now = (now.strftime('%Y-%m-%d %H:%M:%S'))
+    date = (now.strftime('%Y-%m-%d'))
+    return date_time_now, date
 
 
 def move_to_click(pos_click: tuple, z_p_k: float):
@@ -10,7 +29,8 @@ def move_to_click(pos_click: tuple, z_p_k: float):
     :param z_p_k: задержка перед кликом(float)
     :return: None
     """
-    # print('move_to_click', pos_click)
+
+    my_print_to_file('move_to_click')
     sleep(0.3)
     pyautogui.moveTo(pos_click, duration=0.5, tween=pyautogui.easeInOutQuad)
     # print('должен быть клик')
@@ -20,13 +40,19 @@ def move_to_click(pos_click: tuple, z_p_k: float):
 
 
 def push_close():
-    # print('def "fun.push_close"')
+    it = 0
+    my_print_to_file('fun.push_close')
     close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
     while not close:
+        it += 0.2
         sleep(0.1)
         close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
+        if it == int:
+            my_print_to_file("поиск close")
     if close:
+        my_print_to_file(f'close = {close}')
         move_to_click(close, 0.1)
+
 
 
 def foto(path_name, _region):
@@ -176,14 +202,15 @@ def to_fountain():
 
 
 def in_battle(par_conf, pos_i):
-    print('in_battle')
+    my_print_to_file('in_battle')
     skip_battle = pyautogui.locateCenterOnScreen('img/skip_battle.png', confidence=par_conf)
+    my_print_to_file(f'skip_battle = {skip_battle}')
     if skip_battle:
         x, y = pos_i
         y += 450
         pos_pet = x, y
         pyautogui.click(pos_pet)
-        print(skip_battle, 'пропустить бой')
+        my_print_to_file('пропускаем бой')
         move_to_click(skip_battle, 0.2)
 
         return 1
@@ -199,17 +226,24 @@ def scroll_down():
 
 
 def go_in_hall_glory():
-    print('def go_in_hall_glory')
+    my_print_to_file('go_in_hall_glory')
+
     in_hall_glory = pyautogui.locateCenterOnScreen('img/link_in_hall_glory.png', confidence=0.98)
     hall_glory = pyautogui.locateCenterOnScreen('img/hall_glory.png', confidence=0.9999)
     close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
+
+    my_print_to_file(f'in_hall_glory = {in_hall_glory}')
+    my_print_to_file(f'hall_glory = {hall_glory}')
+    my_print_to_file(f'close = {close}')
+
     while not in_hall_glory:
         if close:
             push_close()
             sleep(1)
         elif hall_glory:
+            my_print_to_file(f'hall_glory = {hall_glory}')
             move_to_click(hall_glory, 0.2)
             sleep(1)
         in_hall_glory = pyautogui.locateCenterOnScreen('img/link_in_hall_glory.png', confidence=0.98)
         hall_glory = pyautogui.locateCenterOnScreen('img/hall_glory.png', confidence=0.9999)
-    close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)
+        close = pyautogui.locateCenterOnScreen('img/close.png', confidence=0.89)

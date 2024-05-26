@@ -1,0 +1,189 @@
+2024-05-26 00:02:54 in_battle
+2024-05-26 00:02:54 skip_battle = Point(x=497, y=117)
+2024-05-26 00:02:55 пропускаем бой
+2024-05-26 00:02:55 move_to_click
+2024-05-26 00:03:00 move_to_click
+2024-05-26 00:03:14 move_to_click
+2024-05-26 00:03:18 move_to_click
+2024-05-26 00:03:28 move_to_click
+2024-05-26 00:03:32 move_to_click
+2024-05-26 00:04:22 in_battle
+2024-05-26 00:04:22 skip_battle = Point(x=497, y=117)
+2024-05-26 00:04:22 пропускаем бой
+2024-05-26 00:04:24 move_to_click
+2024-05-26 00:04:29 move_to_click
+2024-05-26 00:04:44 move_to_click
+2024-05-26 00:04:48 move_to_click
+2024-05-26 00:04:55 move_to_click
+2024-05-26 00:04:58 move_to_click
+2024-05-26 00:04:59 move_to_click
+2024-05-26 00:09:52 in_battle
+2024-05-26 00:09:52 skip_battle = Point(x=497, y=117)
+2024-05-26 00:09:52 пропускаем бой
+2024-05-26 00:09:54 move_to_click
+2024-05-26 00:09:57 in_battle
+2024-05-26 00:09:57 skip_battle = Point(x=497, y=117)
+2024-05-26 00:09:57 пропускаем бой
+2024-05-26 00:09:57 move_to_click
+2024-05-26 00:09:59 move_to_click
+2024-05-26 00:10:13 move_to_click
+2024-05-26 00:10:17 move_to_click
+2024-05-26 00:12:21 in_battle
+2024-05-26 00:12:21 skip_battle = Point(x=497, y=117)
+2024-05-26 00:12:21 пропускаем бой
+2024-05-26 00:12:21 move_to_click
+2024-05-26 00:12:26 move_to_click
+2024-05-26 00:12:41 move_to_click
+2024-05-26 00:12:46 move_to_click
+2024-05-26 00:12:59 move_to_click
+2024-05-26 00:13:04 move_to_click
+2024-05-26 00:17:50 in_battle
+2024-05-26 00:17:50 skip_battle = Point(x=497, y=117)
+2024-05-26 00:17:50 пропускаем бой
+2024-05-26 00:17:50 move_to_click
+2024-05-26 00:17:53 in_battle
+2024-05-26 00:17:53 skip_battle = Point(x=497, y=117)
+2024-05-26 00:17:53 пропускаем бой
+2024-05-26 00:17:53 move_to_click
+2024-05-26 00:17:55 move_to_click
+2024-05-26 00:18:10 move_to_click
+2024-05-26 00:18:14 move_to_click
+2024-05-26 00:18:25 move_to_click
+2024-05-26 00:18:29 move_to_click
+2024-05-26 00:24:18 in_battle
+2024-05-26 00:24:18 skip_battle = Point(x=497, y=117)
+2024-05-26 00:24:18 пропускаем бой
+2024-05-26 00:24:18 move_to_click
+2024-05-26 00:24:22 move_to_click
+2024-05-26 00:24:38 move_to_click
+2024-05-26 00:24:41 move_to_click
+2024-05-26 00:25:45 in_battle
+2024-05-26 00:25:45 skip_battle = Point(x=497, y=117)
+2024-05-26 00:25:45 пропускаем бой
+2024-05-26 00:25:45 move_to_click
+2024-05-26 00:25:50 move_to_click
+2024-05-26 00:26:05 move_to_click
+2024-05-26 00:26:08 move_to_click
+2024-05-26 00:27:12 in_battle
+2024-05-26 00:27:12 skip_battle = Point(x=497, y=117)
+2024-05-26 00:27:13 пропускаем бой
+2024-05-26 00:27:13 move_to_click
+2024-05-26 00:27:16 move_to_click
+2024-05-26 00:27:30 move_to_click
+2024-05-26 00:27:34 move_to_click
+2024-05-26 00:27:38 move_to_click
+2024-05-26 15:20:52 
+2024-05-26 15:20:52 *******                      *******
+2024-05-26 15:20:52 ******* перезапуск программы *******
+2024-05-26 15:20:52 *******                      *******
+2024-05-26 15:20:52 
+2024-05-26 15:20:55 move_to_click
+2024-05-26 15:20:58 move_to_click
+2024-05-26 15:21:01 move_to_click
+2024-05-26 15:21:03 move_to_click
+2024-05-26 15:21:05 move_to_click
+2024-05-26 15:21:07 move_to_click
+2024-05-26 15:21:09 move_to_click
+2024-05-26 15:21:11 move_to_click
+2024-05-26 15:21:14 move_to_click
+2024-05-26 15:21:16 move_to_click
+2024-05-26 15:21:18 move_to_click
+2024-05-26 15:21:21 move_to_click
+2024-05-26 15:21:22 move_to_click
+2024-05-26 15:21:25 move_to_click
+2024-05-26 15:21:27 move_to_click
+2024-05-26 15:21:29 move_to_click
+2024-05-26 15:21:31 move_to_click
+2024-05-26 15:21:33 move_to_click
+2024-05-26 15:21:35 move_to_click
+2024-05-26 15:21:38 move_to_click
+2024-05-26 15:21:41 move_to_click
+2024-05-26 15:21:43 move_to_click
+2024-05-26 15:21:46 move_to_click
+2024-05-26 15:21:48 move_to_click
+2024-05-26 15:21:49 move_to_click
+2024-05-26 15:21:52 move_to_click
+2024-05-26 15:21:54 move_to_click
+2024-05-26 15:21:56 move_to_click
+2024-05-26 15:21:58 move_to_click
+2024-05-26 15:22:01 move_to_click
+2024-05-26 15:22:02 move_to_click
+2024-05-26 15:22:05 move_to_click
+2024-05-26 15:22:07 move_to_click
+2024-05-26 15:22:09 move_to_click
+2024-05-26 15:22:11 move_to_click
+2024-05-26 15:22:14 move_to_click
+2024-05-26 15:22:15 move_to_click
+2024-05-26 15:22:18 move_to_click
+2024-05-26 15:22:20 move_to_click
+2024-05-26 15:22:22 move_to_click
+2024-05-26 15:22:24 move_to_click
+2024-05-26 15:22:26 move_to_click
+2024-05-26 15:22:28 move_to_click
+2024-05-26 15:22:30 move_to_click
+2024-05-26 15:22:34 move_to_click
+2024-05-26 15:22:36 move_to_click
+2024-05-26 15:22:38 move_to_click
+2024-05-26 15:22:40 move_to_click
+2024-05-26 15:22:42 move_to_click
+2024-05-26 15:22:44 move_to_click
+2024-05-26 15:22:46 move_to_click
+2024-05-26 15:22:48 move_to_click
+2024-05-26 15:22:50 move_to_click
+2024-05-26 15:22:53 move_to_click
+2024-05-26 15:22:54 move_to_click
+2024-05-26 15:22:57 move_to_click
+2024-05-26 15:22:59 move_to_click
+2024-05-26 15:23:01 move_to_click
+2024-05-26 15:23:03 move_to_click
+2024-05-26 15:23:06 move_to_click
+2024-05-26 15:23:07 move_to_click
+2024-05-26 15:23:10 move_to_click
+2024-05-26 15:23:11 move_to_click
+2024-05-26 15:28:56 move_to_click
+2024-05-26 15:28:59 move_to_click
+2024-05-26 15:31:04 in_battle
+2024-05-26 15:31:04 skip_battle = Point(x=439, y=131)
+2024-05-26 15:31:04 пропускаем бой
+2024-05-26 15:31:04 move_to_click
+2024-05-26 15:31:09 move_to_click
+2024-05-26 15:31:24 move_to_click
+2024-05-26 15:31:28 move_to_click
+2024-05-26 15:31:41 move_to_click
+2024-05-26 15:31:45 move_to_click
+2024-05-26 15:34:32 in_battle
+2024-05-26 15:34:32 skip_battle = Point(x=439, y=131)
+2024-05-26 15:34:32 пропускаем бой
+2024-05-26 15:34:32 move_to_click
+2024-05-26 15:34:37 move_to_click
+2024-05-26 15:34:53 move_to_click
+2024-05-26 15:34:56 move_to_click
+2024-05-26 15:37:00 in_battle
+2024-05-26 15:37:01 skip_battle = None
+2024-05-26 15:37:03 move_to_click
+2024-05-26 15:37:20 move_to_click
+2024-05-26 15:37:23 move_to_click
+2024-05-26 15:39:28 in_battle
+2024-05-26 15:39:29 skip_battle = Point(x=439, y=131)
+2024-05-26 15:39:29 пропускаем бой
+2024-05-26 15:39:29 move_to_click
+2024-05-26 15:39:33 move_to_click
+2024-05-26 15:39:48 move_to_click
+2024-05-26 15:39:52 move_to_click
+2024-05-26 15:42:56 in_battle
+2024-05-26 15:42:56 skip_battle = Point(x=439, y=131)
+2024-05-26 15:42:56 пропускаем бой
+2024-05-26 15:42:58 move_to_click
+2024-05-26 15:43:02 move_to_click
+2024-05-26 15:43:17 move_to_click
+2024-05-26 15:43:21 move_to_click
+2024-05-26 15:48:31 in_battle
+2024-05-26 15:48:31 skip_battle = Point(x=439, y=131)
+2024-05-26 15:48:31 пропускаем бой
+2024-05-26 15:48:31 move_to_click
+2024-05-26 15:48:33 move_to_click
+2024-05-26 15:48:48 move_to_click
+2024-05-26 15:48:52 move_to_click
+2024-05-26 15:49:03 move_to_click
+2024-05-26 15:49:05 move_to_click
+2024-05-26 15:49:07 move_to_click

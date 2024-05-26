@@ -1,14 +1,21 @@
 from tkinter import *
 from tkinter import ttk
 # from PIL import ImageTk
-# import fun
+from fun import my_print_to_file
 import revision_of_house as r_h
 import energy
 import arena
 
+my_print_to_file('')
+my_print_to_file('*******                      *******')
+my_print_to_file("******* перезапуск программы *******")
+my_print_to_file('*******                      *******')
+my_print_to_file('')
+
 
 def arena_battl():
     attempts = 0
+
     while True:
         arena.battle_in_arena()
         attempts += 1

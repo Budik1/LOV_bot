@@ -32,17 +32,13 @@ tasks_xp_g = {'t1_2': 'img/tasks_gavr/12x35-2.png',
 #   't4_3': 'img/tasks_gavr/46x138-3.png',
 #   't5_1': 'img/tasks_gavr/58x173-1.png',
 
-tasks_gold_vel = {'t1_2': 'img/tasks_vel/18x6-2.png',
-                  't1_3': 'img/tasks_vel/18x6-3.png',
-                  't2_2': 'img/tasks_vel/36x12-2.png',
-                  't2_3': 'img/tasks_vel/36x12-3.png',
-                  't3_2': 'img/tasks_vel/54x18-2.png',
-                  't3_3': 'img/tasks_vel/54x18-3.png',
+tasks_gold_vel = {'t1_3': 'img/tasks_vel/20x7-3.png',
+                  't2_2': 'img/tasks_vel/39x13-2.png',
+                  't2_3': 'img/tasks_vel/39x13-3.png',
+                  't3_1': 'img/tasks_vel/59x20-1.png',
 
                   }
-#
-#                   't1_3': 'img/tasks_vel/17x6-3.png',
-#                   't2_2': 'img/tasks_vel/33x11-2.png',
+#                   't3_3': 'img/tasks_vel/54x18-3.png',
 #                   't2_3': 'img/tasks_vel/33x11-3.png',
 tasks_xp_vel = {}
 
